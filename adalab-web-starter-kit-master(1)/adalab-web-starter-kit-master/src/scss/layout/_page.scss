@@ -1,27 +1,38 @@
+.main {
+  text-align: center;
+}
+.characters {
+  
+  color: blue;
+  font-size: 15px;
+}
+
 .search {
   width: 80%;
   background-color: white;
+  height: 50px;
+  transform: translate(10%, -50%);
+  display: flex;
   box-shadow: 0 0.46875rem 2.1875rem rgb(4 9 20 / 3%),
     0 0.9375rem 1.40625rem rgb(4 9 20 / 3%),
     0 0.25rem 0.53125rem rgb(4 9 20 / 5%), 0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
-  height: 150px;
-  transform: translate(10%, -50%);
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
+  &__form{
+    width: 100%;
+  }
+
+  &__input {
+    width: 80%;
+    margin: 5px;
+    padding: 5px;
+    border: 0.5px solid blue;
+    color: grey;
+  }
 }
 
-.characters {
-  color: blue;
-}
-
-.input {
-  margin: 5px;
-  padding: 5px;
-  border: 0.5px solid blue;
-  color: grey;
-}
 .button {
   background-color: blue;
   border: none;
@@ -29,21 +40,49 @@
   margin: 5px;
   color: white;
 }
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  gap: 20px; 
+}
+
+.data {
+  display: flex;
+  flex-grow: 1; 
+
+  &__fav {
+    flex-basis: auto; 
+    flex-grow: 0; 
+    flex-shrink: 0;
+    width: calc(33.333% - 20px);
+    margin-right: 20px; 
+  }
+
+  &__space {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+  }
+}
 .card {
+  flex: 0 0 calc(33.333% - 20px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
   background-color: white;
+  box-shadow: 0 0.46875rem 2.1875rem rgb(4 9 20 / 3%),
+    0 0.9375rem 1.40625rem rgb(4 9 20 / 3%),
+    0 0.25rem 0.53125rem rgb(4 9 20 / 5%), 0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
   overflow: hidden;
   padding: 10px;
   transition: 0.25s all;
   width: 100vw;
-  box-shadow: 0 0.46875rem 2.1875rem rgb(4 9 20 / 3%),
-    0 0.9375rem 1.40625rem rgb(4 9 20 / 3%),
-    0 0.25rem 0.53125rem rgb(4 9 20 / 5%), 0 0.125rem 0.1875rem rgb(4 9 20 / 3%);
   text-align: center;
+  box-sizing: border-box;
 }
 @media all and (min-width: 500px) {
   .card {
