@@ -3,40 +3,48 @@
 const descrSearchText = document.querySelector(".js_in_search_desc");
 const searchButton = document.querySelector(".js_button_search");
 const characterList = document.querySelector(".js-list");
+const favoriteList = document.querySelector(".js-list-fav");
 
-let characters = []; // Inicializa characters como un array vacío en lugar de undefined
+let characters = [];
 let searchInput = "";
+let favCharacters = [];
 
 function searchCharacters(name) {
   fetch(`//api.disneyapi.dev/character?pageSize=50&name=${name}`)
     .then((response) => response.json())
     .then((response_json) => {
-      characters = response_json.data; // Guarda los personajes en la variable characters
-      printCharacters(characters);
+      characters = response_json.data;
+      printCharacters(characters, characterList);
+      //TODO QUeryselectorall de elemtnos con clase card y añadirle el event listener con bucle
+      const cardElements = document.querySelectorAll(".card");
+
+      cardElements.forEach((card) => {
+        card.addEventListener("click", (event) => {
+          const clickedElement = event.target.closest('.card');
+          let clickedCharacter = characters.find(character => character._id == clickedElement.id)
+          favCharacters.push(clickedCharacter)
+          printCharacters(favCharacters, favoriteList);
+        });
+      });
+      printCharacters(favCharacters, favoriteList);
     });
 }
 
-function printCharacters(characters) {
-  characterList.innerHTML = "";
+function printCharacters(characters, list) {
+  list.innerHTML = "";
   characters.forEach((character) => {
     const characterCard = craftCharacterHtml(character);
-    characterList.insertAdjacentHTML("beforeend", characterCard);
+    list.insertAdjacentHTML("beforeend", characterCard);
   });
 }
-//if (list.img) {
-  //imgElement.setAttribute("src", `${list.img}`);
-//} else {
-  //imgElement.setAttribute(
-   // "src",
-    //"https://via.placeholder.com/210x295/ffffff/555555/?text=Disney"
- // );
-//}
 
 function craftCharacterHtml(characterData) {
-  // Utiliza los datos del personaje para crear la tarjeta
+  const imageUrl = characterData.imageUrl
+    ? characterData.imageUrl
+    : "https://via.placeholder.com/210x295/ffffff/555555/?text=Disney";
   return `
-    <li class="card" id="${characterData.id}">
-      <img class="card_img" src="${characterData.imageUrl}" alt="${characterData.name}" />
+    <li class="card" id="${characterData._id}">
+      <img class="card_img" src="${imageUrl}" alt="${characterData.name}" />
       <h3 class="card_title">${characterData.name}</h3>
     </li>
   `;
@@ -46,8 +54,22 @@ searchCharacters("");
 
 function handleClickSearch(ev) {
   ev.preventDefault();
-  const searchTerm = descrSearchText.value.trim(); // Obtén el término de búsqueda del input
+  const searchTerm = descrSearchText.value.trim();
   searchCharacters(searchTerm);
 }
 
 searchButton.addEventListener("click", handleClickSearch);
+
+
+//Local Storage
+
+function listLocalStore() {
+  const listLocalstorage = JSON.parse(localStorage.getItem("ListFavorite"));
+
+  if (listLocalstorage) {
+    favCharacters = listLocalstorage;
+    renderListFavorite(listLocalstorage);
+  }
+}
+
+listLocalStore();
