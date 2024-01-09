@@ -24,6 +24,7 @@ function searchCharacters(name) {
           let clickedCharacter = characters.find(character => character._id == clickedElement.id)
           favCharacters.push(clickedCharacter)
           printCharacters(favCharacters, favoriteList);
+          saveToLocalStorage();
         });
       });
       printCharacters(favCharacters, favoriteList);
@@ -63,13 +64,21 @@ searchButton.addEventListener("click", handleClickSearch);
 
 //Local Storage
 
-function listLocalStore() {
-  const listLocalstorage = JSON.parse(localStorage.getItem("ListFavorite"));
-
-  if (listLocalstorage) {
-    favCharacters = listLocalstorage;
-    renderListFavorite(listLocalstorage);
-  }
+function saveToLocalStorage() {
+  localStorage.setItem("ListFavorite", JSON.stringify(favCharacters));
+  console.log(favCharacters);
 }
 
-listLocalStore();
+/*function handleFavoriteClick(event) {
+  const clickedElement = event.target.closest('.card');
+  if (!clickedElement) return;
+
+  const clickedCharacter = favCharacters.find(character => character._id == clickedElement.id);
+  if (!clickedCharacter) return;
+
+  favCharacters = [...favCharacters, clickedCharacter];
+  renderListFavorite(favCharacters);
+  saveToLocalStorage();
+  
+}
+favoriteList.addEventListener("click", handleFavoriteClick);*/
