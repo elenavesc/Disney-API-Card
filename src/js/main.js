@@ -17,6 +17,7 @@ function searchCharacters(name) {
       printCharacters(characters, characterList);
       //TODO QUeryselectorall de elemtnos con clase card y añadirle el event listener con bucle
       const cardElements = document.querySelectorAll(".card");
+      
 
       cardElements.forEach((card) => {
         card.addEventListener("click", (event) => {
@@ -28,6 +29,7 @@ function searchCharacters(name) {
         });
       });
       printCharacters(favCharacters, favoriteList);
+      
     });
 }
 
@@ -69,16 +71,12 @@ function saveToLocalStorage() {
   console.log(favCharacters);
 }
 
-/*function handleFavoriteClick(event) {
-  const clickedElement = event.target.closest('.card');
-  if (!clickedElement) return;
-
-  const clickedCharacter = favCharacters.find(character => character._id == clickedElement.id);
-  if (!clickedCharacter) return;
-
-  favCharacters = [...favCharacters, clickedCharacter];
-  renderListFavorite(favCharacters);
-  saveToLocalStorage();
-  
+function getFromLocalStorage() {
+  const storedData = localStorage.getItem("ListFavorite");
+  if (storedData) {
+    const favoriteItems = JSON.parse(storedData);
+    return favoriteItems;
+  } else {
+    return []; 
+  }
 }
-favoriteList.addEventListener("click", handleFavoriteClick);*/
