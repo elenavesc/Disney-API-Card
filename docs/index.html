@@ -3,65 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adalab Web Starter Kit</title>
+    <title>Disney Characters</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
     
-    <link rel="icon" href="./images/favicon.png" />
-    <link rel="stylesheet" href="./assets/main-62015576.css">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC+klEQVRYhb3Uv2sbZxjA8e9zUortPyFDyBRCA5ICGTworQajO4WM+QOM82tsBxMNJQTRwYQSTNtgSgkhQ5ZsDhhbSDZqqhOIjh6KfCE0FU0oreMaV0qNJb1Ph1qKItWW7uzomY7jXn0/976SJOa5T4FvTaO1un7uU0Y9FkocJW+FQ8WoV5qKVoojBrybuKjmESlGPXfqvDcaiNV7QyAuSt6oPIt5pUTk5x9HC+iCfIJqwQpZhZjnJiKeO1pA1yRQCpZSiHmlRLTybOSALogWREKFqOcmIt4PxwbY9LkmIUpBNFyIeaV4xDvad8RSOK/wGfDaz0L5b0eKllr5mFeKB/35SvsiWilOiCXXVEkLnAzwWauIZIxRd/1s3D/gHcSdwOIaR4Wg7vqZwZA+QAey4U4A0wJp4FRgSNO46x9f9A/oQCrFMbGsGVVNiw+IqtKqvzX/PP8l16jVM8a0yr/duOUf0IFsuGMCM0BalVNywEoFWrU6u9VXNN781b5tgJxCRiRU/vXq5/4BHUilOCaWzKDvH83+G/eGe8co5IAMLS1Xb876B3QgG+6YiEyrarpVq58eEO4bhaxAJhwUMPdiZzcUCv/UQCvl2tbp5Z0am6rIQWfTP2eAs753YGlpiRMnPrqgqreBy+z/nTfVUK5vs/z3n2w29w6DvETkSzXmcfX67N7QgMXFZcbHw33h3nkP0tpD9k9Z4SUwh+qj6vXZvfbzAwHZbBYRa2D4EEj1jWnOqTEPu8MDASsreUTMJPAFcGnYcNdUgbsKD1OOvXvQQ32AXC6HMToJ3AGSAcKvRWROVR84h4T7AGtrazQazUngNuAEDN9V5YHjJN8Ou0iy2VVEzAVVvUOwrf4d+EpVv0ulnKHD7QlD64kqV4KGge8dx675DXcBmPIZ/wO4p6oLqZQTONwN8BUGFo7yxkEAm8A8cN9x7J3jCg8D2ALuich9204ee/gwwJaIfA18Y9vJ7Q8V/j/ANjAvIiMJdwN2gAURmbft5Naowu35Fwg6bZKdTK4oAAAAAElFTkSuQmCC" />
+    <link rel="stylesheet" href="./assets/main-a126f120.css">
   </head>
 
   <body>
     <div class="page">
-      <header class="page__header">
-  <img src="./images/logo-adalab.png" alt="Adalab">
-  <h1>Bienvenidos a Adalab</h1>
+      <header class="header">
+
 </header>
+      <main class="main">
 
-      <main class="page__main">
-  <h2>Este es el starter kit de Adalab</h2>
-  <p>Lo usamos para aprender:</p>
-  <ul class="main__list">
-    <li>Sass</li>
-    <li>HTML partials</li>
-    <li>Gulp</li>
-    <li>y muchas cosas más</li>
-  </ul>
-  <p>Si quieres saber cúales son las rutas correctas para:</p>
-  <ul class="main__list">
-    <li>
-      una <code class="code">&lt;img /&gt;</code> mira el fichero
-      <code class="code">./src/html/partials/header.html</code>.
-    </li>
-    <li>
-      y para un <code class="code">background-image</code> mira el fichero
-      <code class="code">./src/html/scss/layout/_page.scss</code>.
-    </li>
-  </ul>
-  <p>
-    Si quieres saber cómo usar un partial HTML dentro de otro partial, busca en la carperta
-    <code class="code">./src/html/index.html</code> y
-    <code class="code">./src/html/partials/main.html</code>, y verás cómo estamos creando estos
-    enlaces:
-  </p>
-  <ul class="main__list">
-    <li>
-      <a class="link__adalab" href="https://adalab.es">Adalab</a>
+  <section class="search">
+    <form class="search__form">
+      <input class="search__input js_in_search_desc" type="text" placeholder="Example: Olu Mei" value="" />
+      <button type="button" class="button js_button_search">Search</button>
+    </form>
+  </section>
 
-    </li>
-    <li>
-      <a class="{=$aClass}" href="./more-info.html">Más info del starter kit</a>
+  
 
-    </li>
-  </ul>
+
+  <section class="data">
+
+    <section class="data__fav">
+      <section class="about-us">
+        <h2 class="characters">  Fav ❤️</h2>
+      </section>
+      <ul class="list js-list-fav card">
+        
+      </ul>
+    </section>
+
+    <section class="data__space">
+      <section class="about-us">
+        <h2 class="characters">Characters</h2>
+      </section>
+      <ul class="list js-list">
+        
+      </ul>
+    </section>
+  </section>
 </main>
-
-      <footer class="page__footer">
-  <small>
-    &copy; Todos los derechos reservados
-    <a class="link__adalab" href="https://adalab.es">Adalab</a>
-
-  </small>
+      <footer class="footer">
+  <h3 class="subtittle">&copy; Sometimes the right path is not the easiest one. © Adalab 2024</h3>
 </footer>
+<script src="./js/main.js"></script>
 
     </div>
     <script src="./js/main.js"></script>
