@@ -15,21 +15,21 @@ function searchCharacters(name) {
     .then((response_json) => {
       characters = response_json.data;
       printCharacters(characters, characterList);
-      //TODO QUeryselectorall de elemtnos con clase card y añadirle el event listener con bucle
+
       const cardElements = document.querySelectorAll(".card");
-      
 
       cardElements.forEach((card) => {
         card.addEventListener("click", (event) => {
-          const clickedElement = event.target.closest('.card');
-          let clickedCharacter = characters.find(character => character._id == clickedElement.id)
-          favCharacters.push(clickedCharacter)
+          const clickedElement = event.target.closest(".card");
+          let clickedCharacter = characters.find(
+            (character) => character._id == clickedElement.id
+          );
+          favCharacters.push(clickedCharacter);
           printCharacters(favCharacters, favoriteList);
           saveToLocalStorage();
         });
       });
       printCharacters(favCharacters, favoriteList);
-      
     });
 }
 
@@ -63,9 +63,6 @@ function handleClickSearch(ev) {
 
 searchButton.addEventListener("click", handleClickSearch);
 
-
-//Local Storage
-
 function saveToLocalStorage() {
   localStorage.setItem("ListFavorite", JSON.stringify(favCharacters));
   console.log(favCharacters);
@@ -77,6 +74,6 @@ function getFromLocalStorage() {
     const favoriteItems = JSON.parse(storedData);
     return favoriteItems;
   } else {
-    return []; 
+    return [];
   }
 }

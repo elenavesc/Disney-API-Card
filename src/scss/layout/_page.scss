@@ -2,7 +2,6 @@
   text-align: center;
 }
 .characters {
-  
   color: blue;
   font-size: 15px;
 }
@@ -19,8 +18,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  &__form{
+
+  &__form {
     width: 100%;
   }
 
@@ -43,25 +42,25 @@
 .list {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
-  gap: 20px; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .data {
   display: flex;
-  flex-grow: 1; 
+  flex-grow: 1;
 
   &__fav {
-    flex-basis: auto; 
-    flex-grow: 0; 
+    flex-basis: auto;
+    flex-grow: 0;
     flex-shrink: 0;
     width: calc(33.333% - 20px);
-    margin-right: 20px; 
+    margin-right: 20px;
   }
 
   &__space {
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
   }
@@ -100,4 +99,3 @@
   font-weight: 600;
   padding: 10px;
 }
-
