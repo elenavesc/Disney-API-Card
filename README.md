@@ -11,9 +11,9 @@ Features
 
 Installation
 
-To run the Disney Characters Search project locally:
+To run the Disney Characters Search project locally: git clone https://github.com/elenavesc/Disney-API-Card.git
 
-    Clone the repository:
+    Clone the repository: git clone https://github.com/elenavesc/Disney-API-Card.git
 
 bash
 
