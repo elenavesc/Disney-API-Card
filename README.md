@@ -5,9 +5,18 @@ The Disney Characters Search project is a web application that allows users to s
 Features
 
     Character Search: Users can search for Disney characters by name using the search bar.
+    ![search](https://github.com/elenavesc/Disney-API-Card/assets/147326237/b56d33fd-8c67-4aa9-a722-ddad93ae7126)
+
     Character Display: Retrieved characters are displayed as cards with their images and names.
+    ![portada](https://github.com/elenavesc/Disney-API-Card/assets/147326237/b29c4092-6e83-4fc3-9029-3d90d3bf626d)
+
     Favorite Characters: Users can click on character cards to add them to the favorites list.
+    ![favourites](https://github.com/elenavesc/Disney-API-Card/assets/147326237/e16ce20f-d0bf-4d80-96e5-40b0a21350ca)
+
     Local Storage: The application utilizes local storage to persist favorite character data across sessions.
+
+    Characters without a photo: they will appear on the list but with a blank image.
+    ![notfound](https://github.com/elenavesc/Disney-API-Card/assets/147326237/5016b3bc-9cd4-4571-9229-8dc741f9689e)
 
 Installation
 
